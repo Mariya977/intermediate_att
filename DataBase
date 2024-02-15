@@ -1,0 +1,33 @@
+CREATE TABLE student_place (
+ student_place_id INT PRIMARY KEY,
+ row_place char (3),
+ desk char (25),
+ variant char (2),
+)
+
+CREATE TABLE study (
+ study_id INT PRIMARY KEY,
+ name VARCHAR (30),
+ study_number char (3),
+  
+)
+
+CREATE TABLE pupil (
+ pupil_id INT PRIMARY KEY,
+ name VARCHAR (30),
+ birthdate DATE (8),
+
+)
+
+CREATE TABLE lesson (
+ lesson_id INT PRIMARY KEY,
+ student_place_id INT,
+ study_id INT,
+ pupil_id INT
+ start_date TimeStamp,
+ end_date TimeStamp,
+ 
+ FOREIGN KEY student_place_id REFERENCES student_place(student_place_id),
+ FOREIGN KEY study_id REFERENCES study(study_id),
+ FOREIGN KEY pupil_id REFERENCES pupil(pupil_id),
+)
