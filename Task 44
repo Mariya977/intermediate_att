@@ -1,0 +1,1 @@
+data = pd.DataFrame(random.sample(['human', 'robot']*10, 20) ,columns={'whoAmI'})
